@@ -1,8 +1,9 @@
 package com.kreitek.files;
 
+import java.io.File;
 import java.util.List;
 
-public abstract class FileSystemItemBase implements FileSystemItem {
+public abstract class FileSystemItemBase implements FileSystemItem,FileSystemItemOpenAndClose {
     protected static final String PATH_SEPARATOR = "/";
     protected String name;
     protected FileSystemItem parent;
@@ -65,7 +66,7 @@ public abstract class FileSystemItemBase implements FileSystemItem {
     @Override
     public abstract void open();
 
-    @Override
+     @Override
     public abstract void setPosition(int numberOfBytesFromBeginning);
 
     @Override

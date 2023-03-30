@@ -2,6 +2,7 @@ package com.kreitek.files;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 
 public class Directory extends FileSystemItemBase implements FileSystemItem {
 
@@ -39,8 +40,23 @@ public class Directory extends FileSystemItemBase implements FileSystemItem {
 
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
+/**
+    long totalSize = 0;
+        if(ruta.isDirectory()){
+        File[] archivos = ruta.listFiles();
+        if(ruta != null){
+            for (File archivo : archivos){
+                totalSize += getSize(archivo);
+            }
+        }
+        }else{
+            totalSize += ruta.length();
+        }
+ **/
+        return 0;
+
     }
+
 
     @Override
     public void open() {

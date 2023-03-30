@@ -3,11 +3,13 @@ package com.kreitek.utils;
 import com.kreitek.files.Directory;
 import com.kreitek.files.File;
 import com.kreitek.files.FileSystemItem;
+import com.kreitek.files.FileSystemItemOpenAndClose;
 
 public class FileSystemBuilder {
 
     private final FileSystemItem root;
     private FileSystemItem currentDirectory;
+    private FileSystemItemOpenAndClose openAndCloseDirectory;
 
     public static FileSystemBuilder getBuilder() {
         return new FileSystemBuilder();
@@ -19,11 +21,11 @@ public class FileSystemBuilder {
     }
 
     public FileSystemBuilder addFile(String name, int size) {
-        FileSystemItem file = new File(currentDirectory, name);
+        FileSystemItemOpenAndClose file = new File(currentDirectory, name);
         file.open();
         file.write(new byte[size]);
         file.close();
-        currentDirectory.addFile(file);
+        currentDirectory.addFile((FileSystemItem) file);
         return this;
     }
 
