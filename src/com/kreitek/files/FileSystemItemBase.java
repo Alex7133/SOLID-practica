@@ -61,7 +61,7 @@ public abstract class FileSystemItemBase implements FileSystemItem,FileSystemIte
     public abstract List<FileSystemItem> listFiles();
 
     @Override
-    public abstract int getSize();
+    public abstract long getSize();
 
     @Override
     public abstract void open();

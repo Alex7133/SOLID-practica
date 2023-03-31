@@ -13,5 +13,5 @@ public interface FileSystemItem {
     List<FileSystemItem> listFiles(); //
     void addFile(FileSystemItem file); //
     void removeFile(FileSystemItem file); //
-    int getSize(); //
+    long getSize(); //
 }

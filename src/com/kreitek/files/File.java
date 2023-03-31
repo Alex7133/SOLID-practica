@@ -6,6 +6,11 @@ import java.util.List;
 
 public  class File extends FileSystemItemBase implements FileSystemItem,FileSystemItemOpenAndClose {
 
+    /**
+     * TO DO: Falta dividir esta clase ya que creo que se puede dividir ya que se encarga de todos los metros abstractos y metodos de las interfaces y ademas
+     * porque tienes los metodos de conversion. Pero no he conseguido implementarlo. Seria un error en los principios de responsabilidad unica
+     */
+
     private int size = 0;
     private boolean isOpen = false;
     private int position = 0;
@@ -43,7 +48,7 @@ public  class File extends FileSystemItemBase implements FileSystemItem,FileSyst
     }
 
     @Override
-    public int getSize() {
+    public long getSize() {
         return size;
     }
 

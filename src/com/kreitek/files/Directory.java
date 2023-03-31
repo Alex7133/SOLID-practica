@@ -2,12 +2,23 @@ package com.kreitek.files;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.io.File;
 
 public class Directory extends FileSystemItemBase implements FileSystemItem {
 
+    /**
+     * TO DO :El metodo no esta del todo bien porque no consigo que funcione del todo porque si fuera directorios reales seria mucho mas facil
+     * pero al ser asi realmente no se me ocurre nada, igualmente pienso que devolver un return size no es tan loco ya que tiene sinergia con los metodos de file manager
+     * para que se calcule el tamaño de de los ficheros
+     */
+
+    /**
+     * TO DO:Falta por hacer la division de esta clase ya que hace demasiadas cosas, estructuración, open and close, remove and add etc.
+     * Son demasiados metodos para una clase
+     */
     private static final String NO_ES_VALIDO_PARA_DIRECTORIOS = "No es válido para directorios";
     private final List<FileSystemItem> files;
+
+    private long size;
 
     public Directory(FileSystemItem parent, String name) {
         super(parent, name);
@@ -39,22 +50,8 @@ public class Directory extends FileSystemItemBase implements FileSystemItem {
     }
 
     @Override
-    public int getSize() {
-/**
-    long totalSize = 0;
-        if(ruta.isDirectory()){
-        File[] archivos = ruta.listFiles();
-        if(ruta != null){
-            for (File archivo : archivos){
-                totalSize += getSize(archivo);
-            }
-        }
-        }else{
-            totalSize += ruta.length();
-        }
- **/
-        return 0;
-
+    public long getSize() {
+        return size;
     }
 
 
