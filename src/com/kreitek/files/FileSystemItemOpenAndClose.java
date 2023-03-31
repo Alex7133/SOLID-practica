@@ -8,13 +8,14 @@ public interface FileSystemItemOpenAndClose {
      * sistema de archivos y las operaciones de entrada y salida de datos
      */
 
-    void open(); //
+    /**
+     * Hemos detectado que en eta interfaz hay dos metodos que no se llegan a usar en el producto final osea que sera un fallo en el principio de segregación
+     * de la interfaz, es verdad que estan implantados pero no se llegan a usar lo que significa que es un fallo.
+     */
 
-    void close(); //
+    void open();
 
-    void setPosition(int numberOfBytesFromBeginning); //
+    void close();
 
-    byte[] read(int numberOfBytesToRead); //
-
-    void write(byte[] buffer); //
+    void write(byte[] buffer);
 }

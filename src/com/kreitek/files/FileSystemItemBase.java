@@ -66,11 +66,9 @@ public abstract class FileSystemItemBase implements FileSystemItem,FileSystemIte
     @Override
     public abstract void open();
 
-     @Override
-    public abstract void setPosition(int numberOfBytesFromBeginning);
-
-    @Override
-    public abstract byte[] read(int numberOfBytesToRead);
+    /**
+     * Eliminamos los dos metodos : setPosition y read por no uso
+     */
 
     @Override
     public abstract void write(byte[] buffer);
